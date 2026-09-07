@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WABI IA — Intelligence Artificielle Premium</title>
+<title>GAT IA — Intelligence Artificielle Premium</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -505,28 +505,21 @@ body {
   }
   .overlay.show { display: block; }
 }
-
-
-
 </style>
 </head>
 <body>
-
-
-</div>
-
 
 <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
 <aside class="sidebar" id="sidebar">
   <div class="logo">
-    <span>WABI IA</span>
+    <span>GAT IA</span>
     <span class="logo-badge">PRO</span>
   </div>
 
   <div class="plan-box" id="planBox">
-    Plan actuel : <strong id="currentPlan">Essai gratuit</strong><br>
-    <span id="creditsLeft">Essai gratuit · 7 jours</span>
+    Plan actuel : <strong id="currentPlan">Gratuit</strong><br>
+    <span id="creditsLeft">5 crédits restants aujourd'hui</span>
     <button class="btn-upgrade" onclick="openPremium()">Passer en Premium</button>
   </div>
 
@@ -541,7 +534,7 @@ body {
   <div class="nav-item" onclick="openPremium()">⭐ Abonnements</div>
 
   <div class="sidebar-footer">
-    WABI IA · Démo Premium<br>
+    GAT IA · Démo Premium<br>
     Paiement simulé
   </div>
 </aside>
@@ -550,14 +543,14 @@ body {
   <div class="header">
     <div class="header-left">
       <button class="menu-btn" onclick="toggleSidebar()">☰</button>
-      <div style="font-weight:700;font-size:15px">WABI IA</div>
+      <div style="font-weight:700;font-size:15px">GAT IA</div>
     </div>
     <div class="credits">Crédits : <span id="creditsDisplay">5</span></div>
   </div>
 
   <div class="chat-area" id="chat">
     <div class="welcome" id="welcome">
-      <h1>Bienvenue sur <span>WABI IA</span></h1>
+      <h1>Bienvenue sur <span>GAT IA</span></h1>
       <p>L’intelligence artificielle premium pour le texte, les images et les vidéos.</p>
       
       <div class="features">
@@ -592,17 +585,12 @@ body {
       <button class="tool-btn active" id="tool-chat" onclick="setMode('chat')">💬 Texte</button>
       <button class="tool-btn" id="tool-photo" onclick="setMode('photo')">🖼️ Photo <span class="pro">PRO</span></button>
       <button class="tool-btn" id="tool-video" onclick="setMode('video')">🎬 Vidéo <span class="pro">PRO</span></button>
-      <button class="tool-btn" id="tool-edit" onclick="setMode('edit')">✏️ Modifier photo <span class="pro">PRO</span></button>
-      <label class="tool-btn" style="cursor:pointer;" title="Envoyer une photo">
-        📷 Joindre
-        <input type="file" id="imageUpload" accept="image/*" style="display:none;" onchange="handleImageUpload(this)">
-      </label>
     </div>
     <div class="input-wrapper">
       <textarea id="input" rows="1" placeholder="Pose ta question ou décris ce que tu veux générer..." onkeydown="handleKey(event)"></textarea>
       <button class="send-btn" id="sendBtn" onclick="send()">➤</button>
     </div>
-    <div class="input-footer">WABI IA — Démo. Les paiements et générations sont simulés.</div>
+    <div class="input-footer">GAT IA — Démo. Les paiements et générations sont simulés.</div>
   </div>
 </main>
 
@@ -610,46 +598,35 @@ body {
 <div class="modal-overlay" id="premiumModal">
   <div class="modal">
     <h2>Passe en <span>Premium</span></h2>
-    <p>Débloque les photos, vidéos et questions illimitées.<br>Paiement via <strong>MTN Mobile Money</strong>.</p>
+    <p>Débloque les photos, vidéos et questions illimitées.</p>
     <div class="plans">
       <div class="plan selected" data-plan="mensuel" onclick="selectPlan(this)">
         <div class="name">Mensuel</div>
-        <div class="price">1 750 FCFA <small>/ mois</small></div>
+        <div class="price">9,99 € <small>/ mois</small></div>
         <div class="desc">Photos + Vidéos + Chat illimité</div>
       </div>
       <div class="plan" data-plan="annuel" onclick="selectPlan(this)">
         <span class="popular">POPULAIRE</span>
         <div class="name">Annuel</div>
-        <div class="price">14 000 FCFA <small>/ an</small></div>
+        <div class="price">79,99 € <small>/ an</small></div>
         <div class="desc">2 mois offerts · Tout illimité</div>
       </div>
       <div class="plan" data-plan="a-vie" onclick="selectPlan(this)">
         <div class="name">À vie</div>
-        <div class="price">31 500 FCFA</div>
+        <div class="price">149 €</div>
         <div class="desc">Paiement unique · Accès permanent</div>
       </div>
     </div>
-    <div style="background:#0e0e14;border:1px solid #2a2a36;border-radius:10px;padding:12px;margin-bottom:14px;font-size:13px;color:#8b8b9e;text-align:left;">
-      <strong style="color:#f5c542;">Paiement MTN MoMo</strong><br>
-      Envoie le montant au numéro :<br>
-      <strong style="color:#f0f0f5;font-size:16px;">+229 01 53 98 28 14</strong>
-    </div>
-    <div id="momo-proof-section" style="text-align:left;margin-bottom:14px;">
-      <label style="font-size:13px;color:#8b8b9e;display:block;margin-bottom:6px;">Photo du reçu MoMo (obligatoire)</label>
-      <input type="file" id="momoProof" accept="image/*" style="width:100%;font-size:13px;color:#f0f0f5;margin-bottom:8px;">
-      <input type="text" id="momoRef" placeholder="Référence / ID de la transaction" style="width:100%;background:#0e0e14;border:1px solid #2a2a36;border-radius:8px;padding:10px;color:#f0f0f5;font-size:13px;font-family:inherit;outline:none;">
-    </div>
     <div class="modal-actions">
       <button class="btn-cancel" onclick="closePremium()">Annuler</button>
-      <button class="btn-buy" onclick="submitMoMoPayment()">Envoyer la preuve</button>
+      <button class="btn-buy" onclick="buyPremium()">S’abonner</button>
     </div>
   </div>
 </div>
 
 <script>
 let isPremium = false;
-let credits = 0;
-let trialDaysLeft = 7;
+let credits = 5;
 let mode = 'chat'; // chat | photo | video
 let selectedPlan = 'mensuel';
 
@@ -674,39 +651,12 @@ function toggleSidebar() {
   document.getElementById('overlay').classList.toggle('show');
 }
 
-
-// ===== TRIAL SYSTEM (7 days) =====
-const TRIAL_DAYS = 7;
-const TRIAL_KEY = 'wabi_trial_start';
-
-function initTrial() {
-  let start = localStorage.getItem(TRIAL_KEY);
-  if (!start) {
-    start = Date.now().toString();
-    localStorage.setItem(TRIAL_KEY, start);
-  }
-  const daysPassed = (Date.now() - parseInt(start, 10)) / (1000 * 60 * 60 * 24);
-  const daysLeft = Math.max(0, Math.ceil(TRIAL_DAYS - daysPassed));
-  if (daysLeft > 0) {
-    document.getElementById('currentPlan').textContent = 'Essai gratuit';
-    document.getElementById('creditsLeft').textContent = daysLeft + ' jour' + (daysLeft > 1 ? 's' : '') + ' restant' + (daysLeft > 1 ? 's' : '');
-    document.getElementById('creditsDisplay').textContent = daysLeft + 'j';
-  } else {
-    document.getElementById('currentPlan').textContent = 'Essai terminé';
-    document.getElementById('creditsLeft').textContent = 'Passe en Premium pour continuer';
-    document.getElementById('creditsDisplay').textContent = '0';
-  }
-  return daysLeft;
-}
-
 function updateCreditsUI() {
-  if (isPremium) {
-    document.getElementById('creditsDisplay').textContent = '∞';
-    document.getElementById('creditsLeft').textContent = 'Accès illimité Premium';
-    document.getElementById('currentPlan').textContent = 'Premium';
-  } else {
-    trialDaysLeft = initTrial();
-  }
+  document.getElementById('creditsDisplay').textContent = isPremium ? '∞' : credits;
+  document.getElementById('creditsLeft').textContent = isPremium 
+    ? 'Accès illimité Premium' 
+    : credits + ' crédits restants aujourd\'hui';
+  document.getElementById('currentPlan').textContent = isPremium ? 'Premium' : 'Gratuit';
 }
 
 function setMode(m) {
@@ -720,7 +670,6 @@ function setMode(m) {
   
   if (m === 'photo') inputEl.placeholder = 'Décris l\'image que tu veux générer (ex: un chat astronaute)...';
   else if (m === 'video') inputEl.placeholder = 'Décris la vidéo que tu veux créer...';
-  else if (m === 'edit') inputEl.placeholder = 'Envoie une photo puis décris la modification...';
   else inputEl.placeholder = 'Pose ta question...';
   
   inputEl.focus();
@@ -742,71 +691,7 @@ function buyPremium() {
   credits = 999;
   updateCreditsUI();
   closePremium();
-  notify('Bienvenue dans WABI IA Premium ! 🎉');
-}
-
-function submitMoMoPayment() {
-  const fileInput = document.getElementById('momoProof');
-  const ref = document.getElementById('momoRef').value.trim();
-  
-  if (!fileInput.files || !fileInput.files[0]) {
-    alert('Ajoute une photo du reçu MoMo pour vérifier le paiement.');
-    return;
-  }
-  if (!ref) {
-    alert('Entre la référence de la transaction MoMo.');
-    return;
-  }
-  
-  // Simulate sending proof (in real version this would go to your backend/WhatsApp)
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    // Store proof locally for demo
-    localStorage.setItem('momo_proof', e.target.result);
-    localStorage.setItem('momo_ref', ref);
-    
-    closePremium();
-    notify('Preuve envoyée ! Vérification en cours...');
-    
-    // Simulate admin verification delay then activate
-    setTimeout(() => {
-      isPremium = true;
-      credits = 999;
-      updateCreditsUI();
-      notify('Paiement vérifié ! Premium activé 🎉');
-    }, 2500);
-  };
-  reader.readAsDataURL(fileInput.files[0]);
-}
-
-let uploadedImage = null;
-
-function handleImageUpload(input) {
-  if (!input.files || !input.files[0]) return;
-  
-  if (!isPremium) {
-    openPremium();
-    input.value = '';
-    return;
-  }
-  
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    uploadedImage = e.target.result;
-    notify('Photo ajoutée ! Décris ce que tu veux modifier.');
-    mode = 'edit';
-    document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
-    // highlight edit if exists
-    const editBtn = document.getElementById('tool-edit');
-    if (editBtn) editBtn.classList.add('active');
-    inputEl.placeholder = 'Décris la modification (ex: enlever le fond, ajouter un chapeau...)';
-    inputEl.focus();
-    
-    // Show preview in chat
-    addMessage('user', '<p>📷 Photo envoyée</p><img src="' + uploadedImage + '" style="max-width:220px;border-radius:10px;margin-top:8px;">', true);
-  };
-  reader.readAsDataURL(input.files[0]);
-  input.value = '';
+  notify('Bienvenue dans GAT IA Premium ! 🎉');
 }
 
 function notify(msg) {
@@ -872,123 +757,35 @@ function hideTyping() {
 }
 
 function getResponse(text) {
-  const t = text.toLowerCase().trim();
-  if (/^(salut|bonjour|hello|hey|bonsoir|coucou)/.test(t)) {
-    return "Salut ! Je suis **WABI IA**, ton assistant intelligent.
-
-Je peux t'aider à :
-• Répondre à tes questions avec précision
-• Rédiger des textes et emails
-• Générer et modifier des images (Premium)
-• Trouver des idées de business
-
-Tu as **7 jours d'essai gratuit**. Que veux-tu faire ?";
+  const t = text.toLowerCase();
+  if (t.includes('ia') || t.includes('intelligence')) {
+    return "L'**intelligence artificielle** permet aux machines d'apprendre et de résoudre des problèmes.\n\nSur **GAT IA**, tu peux :\n- Poser des questions en illimité (Premium)\n- Générer des **photos**\n- Créer des **vidéos** courtes\n\nPasse en Premium pour tout débloquer !";
   }
-  if (t.includes("intelligence artificielle") || t.includes("explique l'ia") || t.includes("c'est quoi l'ia") || (t.includes("ia") && (t.includes("explique") || t.includes("c'est quoi")))) {
-    return "**L'Intelligence Artificielle (IA)** est une technologie qui permet aux ordinateurs d'apprendre, de raisonner et de résoudre des problèmes comme un humain.
-
-**En résumé :**
-• Elle analyse d'énormes quantités de données
-• Elle reconnaît des patterns (images, texte, voix)
-• Elle peut générer du contenu (texte, images, vidéos)
-
-**Exemples concrets :** reconnaissance faciale, voitures autonomes, assistants comme WABI IA.
-
-Tu veux que je t'explique un type d'IA en particulier (générative, vision, etc.) ?";
+  if (t.includes('business') || t.includes('argent')) {
+    return "Voici quelques idées pour **gagner de l'argent avec l'IA** :\n\n1. Créer et vendre des images générées\n2. Proposer des services de rédaction IA\n3. Automatiser des tâches pour des entreprises\n4. Créer des chatbots personnalisés\n5. Vendre des formations sur l'IA\n\nAvec **GAT IA Premium**, tu as les outils pour commencer.";
   }
-  if (t.includes("argent") || t.includes("business") || t.includes("gagner")) {
-    return "Voici **5 façons concrètes** de gagner de l'argent avec l'IA en Afrique :
-
-1. **Services de rédaction** — Textes, emails, scripts (5 000 à 50 000 FCFA)
-2. **Création de logos & images** — Pour commerces et influenceurs
-3. **Chatbots WhatsApp** — Automatisation pour boutiques
-4. **Formations** — Ateliers payants sur l'IA
-5. **Contenu réseaux sociaux** — Captions + visuels IA
-
-Tu veux un plan détaillé pour l'une de ces idées ?";
+  if (t.includes('email')) {
+    return "Voici un exemple d'**email professionnel** :\n\n---\nObjet : Demande de collaboration\n\nBonjour [Nom],\n\nJe me permets de vous contacter car je suis intéressé par une collaboration avec votre entreprise.\n\nSeriez-vous disponible pour un court échange la semaine prochaine ?\n\nCordialement,\n[Ton nom]\n---\n\nTu veux que je l'adapte à un cas précis ?";
   }
-  if (t.includes("email") || t.includes("mail")) {
-    return "Voici un **email professionnel** prêt à l'emploi :
-
----
-**Objet :** Proposition de collaboration
-
-Bonjour M./Mme [Nom],
-
-Je me permets de vous contacter afin de vous proposer une collaboration.
-
-Je serais ravi(e) d'échanger avec vous pour voir comment nous pourrions travailler ensemble.
-
-Seriez-vous disponible pour un appel de 15 minutes cette semaine ?
-
-Cordialement,
-[Ton prénom et nom]
-[Téléphone]
----
-
-Dis-moi le contexte exact, je te le personnalise immédiatement.";
-  }
-  if (t.includes("code") || t.includes("javascript") || t.includes("python") || t.includes("programmation") || t.includes("html")) {
-    return "Je peux t'aider avec le **code**.
-
-1. Colle ton code ou décris le problème
-2. Indique le langage (JavaScript, Python, HTML...)
-3. Je corrige, j'explique ou j'écris un exemple
-
-**Exemple de bonne demande :**
-« Écris une fonction JavaScript qui trie un tableau de nombres du plus petit au plus grand »
-
-Envoie ta question technique !";
-  }
-  if (t.includes("prix") || t.includes("premium") || t.includes("abonnement") || t.includes("tarif") || t.includes("coûte")) {
-    return "**Tarifs WABI IA** (après l'essai gratuit de 7 jours) :
-
-• **Mensuel** → 1 750 FCFA / mois
-• **Annuel** → 14 000 FCFA / an
-• **À vie** → 31 500 FCFA (paiement unique)
-
-Paiement par **MTN MoMo** : +229 01 53 98 28 14
-
-Tu veux activer Premium maintenant ?";
-  }
-  if (t.includes("aide") || t.includes("que peux") || t.includes("tu fais quoi")) {
-    return "Voici ce que je peux faire :
-
-**Pendant l'essai gratuit (7 jours) :**
-• Réponses précises à tes questions
-• Rédaction de textes et emails
-
-**Avec Premium :**
-• Génération d'images
-• Modification de tes photos
-• Génération de vidéos
-• Questions illimitées
-
-Pose ta question ou utilise les boutons en bas !";
-  }
-  return "J'ai bien compris ta question.
-
-**Réponse :** Je suis une version de démonstration de WABI IA. Je peux déjà t'aider sur beaucoup de sujets (explications, rédaction, idées business, code...).
-
-Pour des réponses encore plus poussées + génération d'images et vidéos, active **Premium** (essai gratuit de 7 jours en cours).
-
-Reformule ta question ou demande-moi un point précis, je vais plus loin.";
+  return "Merci pour ta question !\n\nJe suis **GAT IA**, une démo d'interface premium.\n\nEn version réelle, je pourrais te répondre de façon beaucoup plus précise grâce à un vrai modèle d'IA.\n\n**Astuce** : passe en Premium pour débloquer la génération de photos et de vidéos.";
 }
 
 async function send() {
   const text = inputEl.value.trim();
   if (!text) return;
 
-  // Check premium / trial
+  // Check credits / premium
   if (!isPremium) {
-    if (mode === 'photo' || mode === 'video' || mode === 'edit') {
+    if (mode === 'photo' || mode === 'video') {
       openPremium();
       return;
     }
-    if (typeof trialDaysLeft !== 'undefined' && trialDaysLeft <= 0) {
+    if (credits <= 0) {
       openPremium();
       return;
     }
+    credits--;
+    updateCreditsUI();
   }
 
   inputEl.value = '';
@@ -1009,28 +806,6 @@ async function send() {
       </div>
       <p style="margin-top:10px;font-size:13px;color:#8b8b9e">En version réelle, une vraie image IA apparaîtrait ici.</p>
     `, true);
-  } else if (mode === 'edit') {
-    if (!uploadedImage) {
-      addMessage('ai', 'Envoie d\'abord une photo avec le bouton 📷 Joindre, puis décris la modification.');
-    } else {
-      addMessage('ai', `
-        <p>Modification demandée : <strong>${text}</strong></p>
-        <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;">
-          <div>
-            <div style="font-size:12px;color:#8b8b9e;margin-bottom:4px;">Original</div>
-            <img src="${uploadedImage}" style="max-width:160px;border-radius:10px;">
-          </div>
-          <div>
-            <div style="font-size:12px;color:#8b8b9e;margin-bottom:4px;">Résultat (simulé)</div>
-            <div style="width:160px;height:160px;border-radius:10px;background:linear-gradient(135deg,#6c5ce7,#a855f7);display:flex;align-items:center;justify-content:center;color:white;font-size:13px;font-weight:700;text-align:center;padding:8px;">
-              Image modifiée<br><small style="opacity:0.8">« ${text.substring(0,30)} »</small>
-            </div>
-          </div>
-        </div>
-        <p style="margin-top:10px;font-size:13px;color:#8b8b9e">En version réelle, l'IA appliquerait vraiment la modification sur ta photo.</p>
-      `, true);
-      uploadedImage = null;
-    }
   } else if (mode === 'video') {
     addMessage('ai', `
       <p>Vidéo générée (simulation) :</p>
@@ -1048,9 +823,6 @@ async function send() {
   document.getElementById('sendBtn').disabled = false;
   inputEl.focus();
 }
-
-
-
 
 updateCreditsUI();
 inputEl.focus();
